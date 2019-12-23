@@ -1,6 +1,6 @@
 # AgroAI
 
-Project to build an unbiased platform for farmers to predict quality and price
+Project to build an unbiased platform for farmers to predict quality and price of the crops.
 
 ## Problem
 
@@ -27,3 +27,9 @@ In India over 70 percent of the rural household depend on Agriculture. It is imp
 - **React** - For building a Progressive Web App for users which provides a mobile application experience using web apps.
 - **Firebase** - For using as backend for features of application other than image analysis.
 - **Flask (Python)** - For building a single endpoint to expose Machine Learning Model to predict quality of image.
+
+
+### Requirement Gathering
+The Google doc for the Explore ML Mentorship Bootcamp 
+[**doc**](https://docs.google.com/document/d/1ze_USE1D-ME89PkI3o_sCu7ftZMBVtGC6GwikKJPYLo/edit)
+
