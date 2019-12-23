@@ -30,6 +30,7 @@ In India over 70 percent of the rural household depend on Agriculture. It is imp
 
 
 ### Requirement Gathering
-The Google doc for the Explore ML Mentorship Bootcamp 
-[**doc**](https://docs.google.com/document/d/1ze_USE1D-ME89PkI3o_sCu7ftZMBVtGC6GwikKJPYLo/edit)
 
+The Google 
+[**doc**](https://docs.google.com/document/d/1ze_USE1D-ME89PkI3o_sCu7ftZMBVtGC6GwikKJPYLo/edit)
+for the Explore ML Mentorship Bootcamp 
