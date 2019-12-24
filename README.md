@@ -34,3 +34,13 @@ In India over 70 percent of the rural household depend on Agriculture. It is imp
 The Google 
 [**doc**](https://docs.google.com/document/d/1ze_USE1D-ME89PkI3o_sCu7ftZMBVtGC6GwikKJPYLo/edit)
 for the Explore ML Mentorship Bootcamp. 
+
+
+## References
+
+- [**Machine Learning for prediction of Crop Yield**](https://medium.com/ai-techsystems/prediction-of-crop-yield-using-machine-learning-84fcd9e0649a)
+- [**Research Paper on Prediction of Crop yeild using ML**](https://www.irjet.net/archives/V5/i2/IRJET-V5I2479.pdf)
+- [**Crop Yield Prediction Using Deep Neural Networks**](https://www.frontiersin.org/articles/10.3389/fpls.2019.00621/full)
+- [**An app that helps farmers cut the middleman out**](https://www.livemint.com/Consumer/nQLEyDHTQvkVAodbfA6B9L/An-app-that-helps-farmers-cut-the-middleman-out.html)
+- [**Farmers, Middlemen and the Way Out**](https://spontaneousorder.in/farmers-middlemen-and-the-way-out/)
+- [**Lean Supply Chain**](https://www.thebetterindia.com/52355/empowering-farmers-greenagtech/)
