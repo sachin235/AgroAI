@@ -22,6 +22,45 @@ In India over 70 percent of the rural household depend on Agriculture. It is imp
 - Integrate quality determination model to platform.
 - (Optional) Platform for analysis of gathered data.
 
+## Dataset Description
+The dataset consists of images of wheat grains organised into five folders - grain, damaged_grain, foreign, broken_grain, grain_cover.
+- **Grain** - contains images of healthy wheat grains
+<p align="center">
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain/IMG_20161016_122456328_1.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain/IMG_20161016_122456328_10.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain/IMG_20161016_122456328_103.jpg?raw=true" width = 100 height = 100>
+</p>
+
+- **Damaged_grain** - contains images of non-healthy or deformed wheat grains
+<p align="center">
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/damaged_grain/IMG_20161016_124705064_395.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/damaged_grain/IMG_20161016_124705064_401.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/damaged_grain/IMG_20161016_124705064_416.jpg?raw=true" width = 100 height = 100>
+</p>
+
+- **Foreign** - contains images of particles other than wheat grains
+<p align="center">
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/foreign_particles/IMG_20161016_125744060_5734.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/foreign_particles/IMG_20161016_125744060_5759.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/foreign_particles/IMG_20161016_125744060_5756.jpg?raw=true" width = 100 height = 100>
+</p>
+
+- **Broken_grain** - contains images of broken wheat grains
+<p align="center">
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain_broken/IMG_20161016_124705064_406.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain_broken/IMG_20161016_124705064_430.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain_broken/IMG_20161016_124705064_432.jpg?raw=true" width = 100 height = 100>
+</p>
+
+- **Grain_cover** - contains images of cover of wheat grains
+<p align="center">
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain_covered/IMG_20161016_131740_4803.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain_covered/IMG_20161016_131740_4806.jpg?raw=true" width = 100 height = 100>
+  <img src = "https://github.com/sachin235/AgroAI/blob/master/Dataset/grain_covered/IMG_20161016_131740_4816.jpg?raw=true" width = 100 height = 100>
+</p>
+
+Source: https://github.com/deepakrana47/Wheat-quality-detector-2/tree/master/dataset5_dep_on_4
+
 ## Stack
 
 - **React** - For building a Progressive Web App for users which provides a mobile application experience using web apps.
