@@ -1,9 +1,8 @@
 import os
 import random
 import string
-from flask import Flask, flash, request, redirect, url_for, send_from_directory
+from flask import Flask, flash, request, redirect, url_for, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
-from cmd_wheat_quality_detector_v2 import predict
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), "static")
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -20,6 +19,9 @@ def allowed_file(filename):
 
 def get_extension(filename):
     return filename.rsplit('.', 1)[1].lower()
+
+def get_quality(good, not_good):
+    return (good * 100 / (good + not_good))
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -43,15 +45,22 @@ def upload_file():
             # save uploaded file to static with a random name
             filename = secure_filename(file.filename)
             ex = get_extension(filename)
-            new_filename = random_string(10) + "." + ex
+            new_filename = random_string(4) + "." + ex
+
+            # TODO: change image resolution
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             
-            print("Predicting")
-            good, not_good = predict(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
-            print("Work done", good, not_good)
+            from cmd_wheat_quality_detector_v2 import predict
+            path_file = os.path.join(app.config['UPLOAD_FOLDER'], new_filename)
+            print("Predicting", path_file)
+            good, not_good = predict(path_file)
+            print("Prediction Done")
     
             # return payload
-            return "Upload successful: " + url_for('uploaded_file', filename=new_filename)
+            return jsonify({
+                "url": url_for('uploaded_file', filename=new_filename),
+                "quality": get_quality(good, not_good)
+            })
 
     elif request.method == 'GET':
         return "AgroAI API"
@@ -60,3 +69,6 @@ def upload_file():
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
