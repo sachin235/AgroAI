@@ -12,6 +12,11 @@ import time
 color = {i: np.random.randint(20, 255, 3) for i in range(5, 5000)}
 color[1] = [255, 255, 255]
 color[2] = [0, 0, 255]
+def areaThreshold_by_avg(axis, exp):
+    avga = np.average([(s[1] - s[0]) * (s[3] - s[2]) for i,s in axis.items()])
+    low = avga/2**exp
+    high = avga*2**exp
+    return low, high
 def get_equiv(equivlence, labels, mcount):
     for i in reversed(sorted(list(equivlence))):
         for j in equivlence[i]:

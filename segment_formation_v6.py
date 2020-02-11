@@ -5,7 +5,7 @@ warnings.simplefilter("ignore", DeprecationWarning)
 
 #from threshold import otsu_threshold
 #from Area import areaThreshold_by_havg#, areaThreshold_by_avg
-#from _8connected import get_8connected_v2
+from _8connected import get_8connected_v2
 import keras
 from util import *
 from L2_Segmentation_v5 import L2_segmentation_2, get_equiv,areaThreshold_by_havg, areaThreshold_by_avg,get_equiv

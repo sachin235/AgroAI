@@ -1,0 +1,5 @@
+.vscode/
+myenv/
+static/
+weights/
+segmentation_data/
