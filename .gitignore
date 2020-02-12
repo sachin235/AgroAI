@@ -1,6 +1,3 @@
 .vscode/
 __pycache__/
 myenv/
-weights/
-segmentation_data/
-log.txt
