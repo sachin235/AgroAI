@@ -50,7 +50,7 @@ def upload_file():
             # TODO: change image resolution
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             
-            from cmd_wheat_quality_detector_v2 import predict
+            from wheat_quality_predictor import predict
             path_file = os.path.join(app.config['UPLOAD_FOLDER'], new_filename)
             print("Predicting", path_file)
             good, not_good = predict(path_file)
