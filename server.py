@@ -4,6 +4,7 @@ import string
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
 
+COST = 300
 UPLOAD_FOLDER = os.path.join(os.getcwd(), "static")
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -22,6 +23,9 @@ def get_extension(filename):
 
 def get_quality(good, not_good):
     return (good * 100 / (good + not_good))
+
+def get_price(quality):
+	return (COST * quality) / 100
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -59,7 +63,8 @@ def upload_file():
             # return payload
             return jsonify({
                 "url": url_for('uploaded_file', filename=new_filename),
-                "quality": get_quality(good, not_good)
+                "quality": get_quality(good, not_good),
+				"price": get_price(get_quality(good, not_good))
             })
 
     elif request.method == 'GET':
