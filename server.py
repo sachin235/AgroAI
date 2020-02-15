@@ -1,6 +1,7 @@
 import os
 import random
 import string
+import time
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, jsonify
 from flask_cors import CORS, cross_origin
 from werkzeug.utils import secure_filename
@@ -82,45 +83,46 @@ def upload_file():
     elif request.method == 'GET':
         return "AgroAI API"
 
-# @app.route('/image', methods=['GET', 'POST'])
-# @cross_origin(origin='localhost',headers=['Content-Type','Authorization'])
-# def test_image():
-#     print("Getting image")
-#     print(request)
-#     # print(request.files['file'])
+# Test route
+@app.route('/image', methods=['GET', 'POST'])
+@cross_origin(origin='localhost',headers=['Content-Type','Authorization'])
+def test_image():
+    print("Getting image")
 
-#     # check if the post request has the file part
-#     if 'file' not in request.files:
-#         flash('No file part')
-#         return jsonify({
-#             "message": "No file part"
-#         })
+    # check if the post request has the file part
+    if 'file' not in request.files:
+        flash('No file part')
+        return jsonify({
+            "message": "No file part"
+        })
     
-#     file = request.files['file']
-#     print(file)
+    file = request.files['file']
+    print(file)
 
-#     # if user does not select file, browser also
-#     # submit an empty part without filename
-#     if file.filename == '':
-#         flash('No selected file')
-#         return jsonify({
-#             "message": "No selected file"
-#         })
+    # if user does not select file, browser also
+    # submit an empty part without filename
+    if file.filename == '':
+        flash('No selected file')
+        return jsonify({
+            "message": "No selected file"
+        })
 
-#     if file and allowed_file(file.filename):
+    if file and allowed_file(file.filename):
         
-#         # save uploaded file to static with a random name
-#         filename = secure_filename(file.filename)
-#         ex = get_extension(filename)
-#         new_filename = random_string(4) + "." + ex
+        # save uploaded file to static with a random name
+        filename = secure_filename(file.filename)
+        ex = get_extension(filename)
+        new_filename = random_string(4) + "." + ex
 
-#         file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
-#         print("Image uploaded successfuly")
-#         response = jsonify({
-#             "message": "Done"
-#         })
-#         # response.headers.add('Access-Control-Allow-Origin', '*')
-#         return response
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
+        print("Testing image successfuly")
+        time.sleep(10)
+        response = jsonify({
+            "url": url_for('uploaded_file', filename=new_filename),
+            "quality": 50,
+            "price": 100,
+        })
+        return response
 
 # Route to fetch uploaded images
 @app.route('/uploads/<filename>')
